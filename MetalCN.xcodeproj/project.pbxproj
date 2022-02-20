@@ -11,6 +11,22 @@
 		D5D06C2727C0D0FC00CA9EA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C2627C0D0FC00CA9EA4 /* ViewController.swift */; };
 		D5D06C2927C0D0FC00CA9EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D06C2827C0D0FC00CA9EA4 /* Assets.xcassets */; };
 		D5D06C2C27C0D0FC00CA9EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D06C2A27C0D0FC00CA9EA4 /* Main.storyboard */; };
+		D5D06C3427C0D38C00CA9EA4 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C3327C0D38C00CA9EA4 /* Renderer.swift */; };
+		D5D06C3627C0DE3600CA9EA4 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C3527C0DE3600CA9EA4 /* Shaders.metal */; };
+		D5D06C5C27C1E8B100CA9EA4 /* MetalComputeAddApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C5B27C1E8B100CA9EA4 /* MetalComputeAddApp.swift */; };
+		D5D06C5E27C1E8B100CA9EA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C5D27C1E8B100CA9EA4 /* ContentView.swift */; };
+		D5D06C6027C1E8B100CA9EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D06C5F27C1E8B100CA9EA4 /* Assets.xcassets */; };
+		D5D06C6327C1E8B100CA9EA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D06C6227C1E8B100CA9EA4 /* Preview Assets.xcassets */; };
+		D5D06C6827C1E8BD00CA9EA4 /* add.metal in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C4D27C1249F00CA9EA4 /* add.metal */; };
+		D5D06C6927C1E8C300CA9EA4 /* Adder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C5127C1256B00CA9EA4 /* Adder.swift */; };
+		D5D06C7527C2350800CA9EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D06C7427C2350800CA9EA4 /* Assets.xcassets */; };
+		D5D06C7E27C2353C00CA9EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C2427C0D0FC00CA9EA4 /* AppDelegate.swift */; };
+		D5D06C7F27C2353E00CA9EA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C2627C0D0FC00CA9EA4 /* ViewController.swift */; };
+		D5D06C8027C2354100CA9EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D06C2A27C0D0FC00CA9EA4 /* Main.storyboard */; };
+		D5D06C8227C2363B00CA9EA4 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C8127C2363B00CA9EA4 /* Shader.metal */; };
+		D5D06C8427C236C000CA9EA4 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C8327C236C000CA9EA4 /* Renderer.swift */; };
+		D5D06C8627C241A600CA9EA4 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C8527C241A600CA9EA4 /* Shapes.swift */; };
+		D5D06C8727C241A600CA9EA4 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C8527C241A600CA9EA4 /* Shapes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +36,40 @@
 		D5D06C2827C0D0FC00CA9EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5D06C2B27C0D0FC00CA9EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5D06C2D27C0D0FC00CA9EA4 /* MetalCN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalCN.entitlements; sourceTree = "<group>"; };
+		D5D06C3327C0D38C00CA9EA4 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		D5D06C3527C0DE3600CA9EA4 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		D5D06C4D27C1249F00CA9EA4 /* add.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = add.metal; sourceTree = "<group>"; };
+		D5D06C5127C1256B00CA9EA4 /* Adder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adder.swift; sourceTree = "<group>"; };
+		D5D06C5927C1E8B100CA9EA4 /* MetalComputeAdd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalComputeAdd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5D06C5B27C1E8B100CA9EA4 /* MetalComputeAddApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalComputeAddApp.swift; sourceTree = "<group>"; };
+		D5D06C5D27C1E8B100CA9EA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D5D06C5F27C1E8B100CA9EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5D06C6227C1E8B100CA9EA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5D06C6427C1E8B100CA9EA4 /* MetalComputeAdd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalComputeAdd.entitlements; sourceTree = "<group>"; };
+		D5D06C6E27C2350800CA9EA4 /* Synchronization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synchronization.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5D06C7427C2350800CA9EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5D06C7927C2350800CA9EA4 /* Synchronization.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Synchronization.entitlements; sourceTree = "<group>"; };
+		D5D06C8127C2363B00CA9EA4 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
+		D5D06C8327C236C000CA9EA4 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		D5D06C8527C241A600CA9EA4 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D5D06C1E27C0D0FC00CA9EA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5D06C5627C1E8B100CA9EA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5D06C6B27C2350800CA9EA4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,7 +82,10 @@
 		D5D06C1827C0D0FC00CA9EA4 = {
 			isa = PBXGroup;
 			children = (
+				D5D06C7D27C2351A00CA9EA4 /* Shared */,
 				D5D06C2327C0D0FC00CA9EA4 /* MetalCN */,
+				D5D06C5A27C1E8B100CA9EA4 /* MetalComputeAdd */,
+				D5D06C6F27C2350800CA9EA4 /* Synchronization */,
 				D5D06C2227C0D0FC00CA9EA4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				D5D06C2127C0D0FC00CA9EA4 /* MetalCN.app */,
+				D5D06C5927C1E8B100CA9EA4 /* MetalComputeAdd.app */,
+				D5D06C6E27C2350800CA9EA4 /* Synchronization.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,13 +103,56 @@
 		D5D06C2327C0D0FC00CA9EA4 /* MetalCN */ = {
 			isa = PBXGroup;
 			children = (
-				D5D06C2427C0D0FC00CA9EA4 /* AppDelegate.swift */,
-				D5D06C2627C0D0FC00CA9EA4 /* ViewController.swift */,
+				D5D06C3327C0D38C00CA9EA4 /* Renderer.swift */,
+				D5D06C3527C0DE3600CA9EA4 /* Shaders.metal */,
 				D5D06C2827C0D0FC00CA9EA4 /* Assets.xcassets */,
-				D5D06C2A27C0D0FC00CA9EA4 /* Main.storyboard */,
 				D5D06C2D27C0D0FC00CA9EA4 /* MetalCN.entitlements */,
 			);
 			path = MetalCN;
+			sourceTree = "<group>";
+		};
+		D5D06C5A27C1E8B100CA9EA4 /* MetalComputeAdd */ = {
+			isa = PBXGroup;
+			children = (
+				D5D06C5B27C1E8B100CA9EA4 /* MetalComputeAddApp.swift */,
+				D5D06C5D27C1E8B100CA9EA4 /* ContentView.swift */,
+				D5D06C4D27C1249F00CA9EA4 /* add.metal */,
+				D5D06C5127C1256B00CA9EA4 /* Adder.swift */,
+				D5D06C5F27C1E8B100CA9EA4 /* Assets.xcassets */,
+				D5D06C6427C1E8B100CA9EA4 /* MetalComputeAdd.entitlements */,
+				D5D06C6127C1E8B100CA9EA4 /* Preview Content */,
+			);
+			path = MetalComputeAdd;
+			sourceTree = "<group>";
+		};
+		D5D06C6127C1E8B100CA9EA4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D5D06C6227C1E8B100CA9EA4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D5D06C6F27C2350800CA9EA4 /* Synchronization */ = {
+			isa = PBXGroup;
+			children = (
+				D5D06C7427C2350800CA9EA4 /* Assets.xcassets */,
+				D5D06C7927C2350800CA9EA4 /* Synchronization.entitlements */,
+				D5D06C8127C2363B00CA9EA4 /* Shader.metal */,
+				D5D06C8327C236C000CA9EA4 /* Renderer.swift */,
+			);
+			path = Synchronization;
+			sourceTree = "<group>";
+		};
+		D5D06C7D27C2351A00CA9EA4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D5D06C2427C0D0FC00CA9EA4 /* AppDelegate.swift */,
+				D5D06C2627C0D0FC00CA9EA4 /* ViewController.swift */,
+				D5D06C2A27C0D0FC00CA9EA4 /* Main.storyboard */,
+				D5D06C8527C241A600CA9EA4 /* Shapes.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +175,40 @@
 			productReference = D5D06C2127C0D0FC00CA9EA4 /* MetalCN.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D5D06C5827C1E8B100CA9EA4 /* MetalComputeAdd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5D06C6527C1E8B100CA9EA4 /* Build configuration list for PBXNativeTarget "MetalComputeAdd" */;
+			buildPhases = (
+				D5D06C5527C1E8B100CA9EA4 /* Sources */,
+				D5D06C5627C1E8B100CA9EA4 /* Frameworks */,
+				D5D06C5727C1E8B100CA9EA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetalComputeAdd;
+			productName = MetalComputeAdd;
+			productReference = D5D06C5927C1E8B100CA9EA4 /* MetalComputeAdd.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5D06C6D27C2350800CA9EA4 /* Synchronization */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5D06C7C27C2350800CA9EA4 /* Build configuration list for PBXNativeTarget "Synchronization" */;
+			buildPhases = (
+				D5D06C6A27C2350800CA9EA4 /* Sources */,
+				D5D06C6B27C2350800CA9EA4 /* Frameworks */,
+				D5D06C6C27C2350800CA9EA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Synchronization;
+			productName = Synchronization;
+			productReference = D5D06C6E27C2350800CA9EA4 /* Synchronization.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +220,12 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					D5D06C2027C0D0FC00CA9EA4 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					D5D06C5827C1E8B100CA9EA4 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					D5D06C6D27C2350800CA9EA4 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
@@ -110,6 +244,8 @@
 			projectRoot = "";
 			targets = (
 				D5D06C2027C0D0FC00CA9EA4 /* MetalCN */,
+				D5D06C5827C1E8B100CA9EA4 /* MetalComputeAdd */,
+				D5D06C6D27C2350800CA9EA4 /* Synchronization */,
 			);
 		};
 /* End PBXProject section */
@@ -124,6 +260,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D5D06C5727C1E8B100CA9EA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5D06C6327C1E8B100CA9EA4 /* Preview Assets.xcassets in Resources */,
+				D5D06C6027C1E8B100CA9EA4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5D06C6C27C2350800CA9EA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5D06C8027C2354100CA9EA4 /* Main.storyboard in Resources */,
+				D5D06C7527C2350800CA9EA4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -131,8 +285,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5D06C3627C0DE3600CA9EA4 /* Shaders.metal in Sources */,
 				D5D06C2727C0D0FC00CA9EA4 /* ViewController.swift in Sources */,
+				D5D06C8627C241A600CA9EA4 /* Shapes.swift in Sources */,
+				D5D06C3427C0D38C00CA9EA4 /* Renderer.swift in Sources */,
 				D5D06C2527C0D0FC00CA9EA4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5D06C5527C1E8B100CA9EA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5D06C5E27C1E8B100CA9EA4 /* ContentView.swift in Sources */,
+				D5D06C5C27C1E8B100CA9EA4 /* MetalComputeAddApp.swift in Sources */,
+				D5D06C6927C1E8C300CA9EA4 /* Adder.swift in Sources */,
+				D5D06C6827C1E8BD00CA9EA4 /* add.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5D06C6A27C2350800CA9EA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5D06C8427C236C000CA9EA4 /* Renderer.swift in Sources */,
+				D5D06C7E27C2353C00CA9EA4 /* AppDelegate.swift in Sources */,
+				D5D06C8727C241A600CA9EA4 /* Shapes.swift in Sources */,
+				D5D06C7F27C2353E00CA9EA4 /* ViewController.swift in Sources */,
+				D5D06C8227C2363B00CA9EA4 /* Shader.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +499,114 @@
 			};
 			name = Release;
 		};
+		D5D06C6627C1E8B100CA9EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MetalComputeAdd/MetalComputeAdd.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MetalComputeAdd/Preview Content\"";
+				DEVELOPMENT_TEAM = U28X3G4N5K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.MetalComputeAdd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D5D06C6727C1E8B100CA9EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MetalComputeAdd/MetalComputeAdd.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MetalComputeAdd/Preview Content\"";
+				DEVELOPMENT_TEAM = U28X3G4N5K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.MetalComputeAdd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D5D06C7A27C2350800CA9EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Synchronization/Synchronization.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U28X3G4N5K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.Synchronization;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D5D06C7B27C2350800CA9EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Synchronization/Synchronization.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U28X3G4N5K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.Synchronization;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +624,24 @@
 			buildConfigurations = (
 				D5D06C3127C0D0FC00CA9EA4 /* Debug */,
 				D5D06C3227C0D0FC00CA9EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5D06C6527C1E8B100CA9EA4 /* Build configuration list for PBXNativeTarget "MetalComputeAdd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5D06C6627C1E8B100CA9EA4 /* Debug */,
+				D5D06C6727C1E8B100CA9EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5D06C7C27C2350800CA9EA4 /* Build configuration list for PBXNativeTarget "Synchronization" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5D06C7A27C2350800CA9EA4 /* Debug */,
+				D5D06C7B27C2350800CA9EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
