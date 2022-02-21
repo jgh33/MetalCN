@@ -41,7 +41,7 @@ struct Triangle {
         return verteices
     }
     
-    static func vertexCount() -> Int {
-        return 3
-    }
+//    static func vertexCount() -> Int {
+//        return 3
+//    }
 }

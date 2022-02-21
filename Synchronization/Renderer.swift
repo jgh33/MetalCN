@@ -16,14 +16,14 @@ let numTriangles = 50
 
 class Renderer: NSObject {
     var semaghore: DispatchSemaphore
-    var vertexBuffer: [MTLBuffer] = []
+    var vertexBuffers: [MTLBuffer] = []
     var currentBufferIndex = 0
     var device: MTLDevice
     var commandQueue: MTLCommandQueue
     var pipelineState: MTLRenderPipelineState
     var viewportSize: vector_uint2
     var triangles: [Triangle] = []
-    var totalVertexCount: Int = 0
+    let allVertexCount: Int = 3 * numTriangles
     var wavePosition: Float = 0
     
     init?(with view: MTKView) {
@@ -50,14 +50,12 @@ class Renderer: NSObject {
         
         self.generateTriangles()
         
-        let count = Triangle.vertexCount()
-        self.totalVertexCount = count * self.triangles.count
-        let bufferSize = totalVertexCount * MemoryLayout<Vertex>.size
+        let bufferSize = allVertexCount * MemoryLayout<Vertex>.size
         
         var index = 0
         while(index < maxFramesInFlight) {
             let buffer = device.makeBuffer(length: bufferSize, options: .storageModeShared)!
-            vertexBuffer.append(buffer)
+            vertexBuffers.append(buffer)
             index += 1
         }
     }
@@ -96,16 +94,24 @@ class Renderer: NSObject {
         wavePosition += speed
         
         let vertices = Triangle.vertices()
-        let vertexCount = Triangle.vertexCount()
-        let currentVertices = vertexBuffer[currentBufferIndex].contents()
+        let currentVerticesPointer = vertexBuffers[currentBufferIndex].contents().bindMemory(to: Vertex.self, capacity: allVertexCount)
+
         
-        var index = 0
-        while(index < numTriangles) {
-            var position = self.triangles[currentBufferIndex].position
-            position.y = (sin(position.x/magnitue + wavePosition) * wavePosition)
-            self.triangles[index].position = position
+        var indexT = 0
+        while(indexT < numTriangles) {
+            var position = self.triangles[indexT].position
+            position.y = (sin(position.x/magnitue + wavePosition) * magnitue)
+            self.triangles[indexT].position = position
             
-            var vIndex = 0
+            var indexV = 0
+            while(indexV < 3) {
+                let currentVertex = indexV + indexT * 3
+                let vertex = Vertex(vertices[indexV].position + triangles[indexT].position, triangles[indexT].color)
+                currentVerticesPointer.advanced(by: currentVertex).pointee = vertex
+                indexV += 1
+            }
+            
+            indexT += 1
         }
     }
     
@@ -128,9 +134,9 @@ extension Renderer: MTKViewDelegate {
         guard let rpd = view.currentRenderPassDescriptor else {return}
         guard let encoder = commandBuffer.makeRenderCommandEncoder(descriptor: rpd) else {return}
         encoder.setRenderPipelineState(pipelineState)
-        encoder.setVertexBuffer(vertexBuffer[currentBufferIndex], offset: 0, index: 0)
+        encoder.setVertexBuffer(vertexBuffers[currentBufferIndex], offset: 0, index: 0)
         encoder.setVertexBytes(&viewportSize, length: MemoryLayout.size(ofValue: viewportSize), index: 1)
-        encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: totalVertexCount)
+        encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: allVertexCount)
         encoder.endEncoding()
         commandBuffer.present(view.currentDrawable!)
         
