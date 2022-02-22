@@ -7,6 +7,7 @@
 
 import Cocoa
 import MetalKit
+import simd
 
 class Renderer: NSObject {
     var device: MTLDevice
@@ -14,9 +15,11 @@ class Renderer: NSObject {
     var commandQueue: MTLCommandQueue
     var texture: MTLTexture!
     var vertices: MTLBuffer
-    var numVertices: Int!
+    var mvpMatrixBuffer: MTLBuffer
     var viewportSize = vector_uint2(0, 0)
-    
+    var depthState: MTLDepthStencilState
+    var numVertices: Int
+    var rotation: Float = 0
     
     init?(with view: MTKView) {
         self.device = view.device!
@@ -63,12 +66,13 @@ class Renderer: NSObject {
             Vertex(vector_float3(0.5, 0.5, 0.5), vector_float2(1, 0)),
             Vertex(vector_float3(0.5, 0.5, 0.5), vector_float2(1, 0)),
             Vertex(vector_float3(-0.5, 0.5, 0.5), vector_float2(0, 0)),
-            Vertex(vector_float3(-0.5, 0.5, -0.5), vector_float2(0, 1)),
+            Vertex(vector_float3(-0.5, 0.5, -0.5), vector_float2(0, 1))
         ]
         
         vertices = device.makeBuffer(bytes: cubeVertices, length: MemoryLayout<Vertex>.size * 36, options: .storageModeShared)!
         numVertices = cubeVertices.count
-        
+        mvpMatrixBuffer = device.makeBuffer(length: MemoryLayout<matrix_float4x4>.size, options: .storageModeShared)!
+
         guard let library = device.makeDefaultLibrary() else {return nil}
         let vf = library.makeFunction(name: "vertexShader")
         let ff = library.makeFunction(name: "samplingShader")
@@ -77,11 +81,18 @@ class Renderer: NSObject {
         rpd.vertexFunction = vf
         rpd.fragmentFunction = ff
         rpd.colorAttachments[0].pixelFormat = view.colorPixelFormat
+        rpd.depthAttachmentPixelFormat = .depth32Float
+        view.depthStencilPixelFormat = .depth32Float
         
         
         guard let ps = try? device.makeRenderPipelineState(descriptor: rpd) else {return nil}
         self.pipelineState = ps
-        
+        let dsp = MTLDepthStencilDescriptor()
+        dsp.depthCompareFunction = .lessEqual
+        dsp.isDepthWriteEnabled = true
+        guard let ds = device.makeDepthStencilState(descriptor: dsp) else {return nil}
+        self.depthState = ds
+        view.clearDepth = 1
         guard let cq = device.makeCommandQueue() else {return nil}
         self.commandQueue  = cq
         
@@ -117,15 +128,38 @@ extension Renderer: MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
+        
+        let cameraPosition = vector_float3(0, 0, -3)
+        rotation += 0.01
+        let rotatedx = matrix_float4x4(rotationMatrix: rotation, axis: vector_float3(1, 0, 0))
+        let rotatedy = matrix_float4x4(rotationMatrix: rotation, axis: vector_float3(0, 1, 0))
+        let modelMatrix = matrix_multiply(rotatedx, rotatedy)
+        let viewMatrix = matrix_float4x4(translationMatrix: cameraPosition)
+        let projMatrix = matrix_float4x4(projectionMatrix: 0.1, far: 100, aspect: 1, fovy: 1)
+        let mvpMatrix = matrix_multiply(projMatrix, matrix_multiply(viewMatrix, modelMatrix))
+        let mvpPointer = mvpMatrixBuffer.contents()
+        var mvp = MVPMatrix(matrix: mvpMatrix)
+        memcpy(mvpPointer, &mvp, MemoryLayout<MVPMatrix>.size)
+        
         guard let commandBuffer = commandQueue.makeCommandBuffer() else{ return }
         guard let rpd = view.currentRenderPassDescriptor else {return}
+//        rpd.colorAttachments[0].clearColor = MTLClearColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
+        
+        let textureD = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .depth32Float, width: Int(view.frame.width), height: Int(view.frame.height), mipmapped: false)
+        textureD.storageMode = .private
+        textureD.usage = .renderTarget
+        let depthTexture = device.makeTexture(descriptor: textureD)
+        rpd.depthAttachment.texture = depthTexture
         guard let encoder = commandBuffer.makeRenderCommandEncoder(descriptor: rpd) else {return}
         encoder.setRenderPipelineState(pipelineState)
-        encoder.setViewport(MTLViewport(originX: 0, originY: 0, width: Double(viewportSize.x), height: Double(viewportSize.y), znear: -1, zfar: 1))
+        encoder.setDepthStencilState(depthState)
+//        encoder.setViewport(MTLViewport(originX: 0, originY: 0, width: Double(viewportSize.x), height: Double(viewportSize.y), znear: -1, zfar: 1))
         encoder.setVertexBuffer(vertices, offset: 0, index: 0)
-        encoder.setVertexBytes(&viewportSize, length: MemoryLayout.size(ofValue: viewportSize), index: 1)
+        encoder.setVertexBuffer(mvpMatrixBuffer, offset: 0, index: 1)
+//        encoder.setVertexBytes(&viewportSize, length: MemoryLayout.size(ofValue: viewportSize), index: 1)
         encoder.setFragmentTexture(texture, index: 0)
-        encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: numVertices)
+        encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 36)
+//        encoder.drawIndexedPrimitives(type: .triangle, indexCount: 36, indexType: .uint16, indexBuffer: indexes, indexBufferOffset: 0)
         encoder.endEncoding()
         commandBuffer.present(view.currentDrawable!)
         commandBuffer.commit()

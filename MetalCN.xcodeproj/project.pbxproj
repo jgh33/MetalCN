@@ -45,6 +45,10 @@
 		E9595D7727C3779C00C1F765 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9595D7627C3779C00C1F765 /* ImageLoader.swift */; };
 		E9595D7B27C37F6300C1F765 /* AAPLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9595D7A27C37F6300C1F765 /* AAPLImage.m */; };
 		E9595D7C27C38E5C00C1F765 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C8527C241A600CA9EA4 /* Shapes.swift */; };
+		E9595DAC27C4C83E00C1F765 /* MatrixUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */; };
+		E9595DAD27C4C83E00C1F765 /* MatrixUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */; };
+		E9595DAE27C4C83E00C1F765 /* MatrixUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */; };
+		E9595DAF27C4C83E00C1F765 /* MatrixUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +91,7 @@
 		E9595D7827C37F6200C1F765 /* Texture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Texture-Bridging-Header.h"; sourceTree = "<group>"; };
 		E9595D7927C37F6300C1F765 /* AAPLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLImage.h; sourceTree = "<group>"; };
 		E9595D7A27C37F6300C1F765 /* AAPLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLImage.m; sourceTree = "<group>"; };
+		E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +221,7 @@
 				D5D06C2427C0D0FC00CA9EA4 /* AppDelegate.swift */,
 				D5D06C2627C0D0FC00CA9EA4 /* ViewController.swift */,
 				D5D06C2A27C0D0FC00CA9EA4 /* Main.storyboard */,
+				E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5BED79B27C48E96007E5AD7 /* Shaders.metal in Sources */,
+				E9595DAF27C4C83E00C1F765 /* MatrixUtil.swift in Sources */,
 				D5BED79727C48E44007E5AD7 /* ViewController.swift in Sources */,
 				D5BED79627C48E42007E5AD7 /* AppDelegate.swift in Sources */,
 				D5BED78F27C47F77007E5AD7 /* ShapeType.swift in Sources */,
@@ -444,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5D06C3627C0DE3600CA9EA4 /* Shaders.metal in Sources */,
+				E9595DAC27C4C83E00C1F765 /* MatrixUtil.swift in Sources */,
 				D5D06C2727C0D0FC00CA9EA4 /* ViewController.swift in Sources */,
 				D5D06C3427C0D38C00CA9EA4 /* Renderer.swift in Sources */,
 				D5D06C2527C0D0FC00CA9EA4 /* AppDelegate.swift in Sources */,
@@ -467,6 +475,7 @@
 			files = (
 				D5D06C8427C236C000CA9EA4 /* Renderer.swift in Sources */,
 				D5D06C7E27C2353C00CA9EA4 /* AppDelegate.swift in Sources */,
+				E9595DAD27C4C83E00C1F765 /* MatrixUtil.swift in Sources */,
 				E9595D7C27C38E5C00C1F765 /* Shapes.swift in Sources */,
 				D5D06C7F27C2353E00CA9EA4 /* ViewController.swift in Sources */,
 				D5D06C8227C2363B00CA9EA4 /* Shader.metal in Sources */,
@@ -483,6 +492,7 @@
 				E9595D7527C373BB00C1F765 /* ShapeType.swift in Sources */,
 				E9595D7B27C37F6300C1F765 /* AAPLImage.m in Sources */,
 				E9595D6927C36EDC00C1F765 /* AppDelegate.swift in Sources */,
+				E9595DAE27C4C83E00C1F765 /* MatrixUtil.swift in Sources */,
 				E9595D7327C3712800C1F765 /* Renderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

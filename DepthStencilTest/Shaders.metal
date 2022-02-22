@@ -23,25 +23,23 @@ struct AAPLVertex {
     vector_float2 textureCoordinate;
 };
 
+struct MVPMatrix {
+    float4x4 matrix;
+};
+
 // Vertex Function
 vertex RasterizerData
 vertexShader(uint vertexID [[ vertex_id ]],
              constant AAPLVertex *vertexArray [[ buffer(0) ]],
-             constant vector_uint2 *viewportSizePointer  [[ buffer(1) ]])
+             constant MVPMatrix &mvp  [[ buffer(1) ]])
 
 {
 
     RasterizerData out;
 
-    float3 pixelSpacePosition = vertexArray[vertexID].position.xyz;
-
-    // Get the viewport size and cast to float.
-    float2 viewportSize = float2(*viewportSizePointer);
-
-    out.position = vector_float4(0.0, 0.0, 0.0, 1.0);
-    out.position.xy = 500 * pixelSpacePosition.xy / (viewportSize / 2.0);
-    out.position.z = pixelSpacePosition.z * 500;
-
+    AAPLVertex in = vertexArray[vertexID];
+    out.position = mvp.matrix * float4(in.position, 1);
+    
     out.textureCoordinate = vertexArray[vertexID].textureCoordinate;
 
     return out;
