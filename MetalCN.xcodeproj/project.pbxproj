@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5BED78427C477E6007E5AD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5BED78327C477E6007E5AD7 /* Assets.xcassets */; };
+		D5BED78D27C477F9007E5AD7 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BED78C27C477F9007E5AD7 /* Renderer.swift */; };
+		D5BED78F27C47F77007E5AD7 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BED78E27C47F77007E5AD7 /* ShapeType.swift */; };
+		D5BED79027C481E2007E5AD7 /* Image.tga in Resources */ = {isa = PBXBuildFile; fileRef = E9595D6D27C36F0E00C1F765 /* Image.tga */; };
+		D5BED79127C481ED007E5AD7 /* AAPLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9595D7A27C37F6300C1F765 /* AAPLImage.m */; };
+		D5BED79627C48E42007E5AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C2427C0D0FC00CA9EA4 /* AppDelegate.swift */; };
+		D5BED79727C48E44007E5AD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C2627C0D0FC00CA9EA4 /* ViewController.swift */; };
+		D5BED79827C48E47007E5AD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D06C2A27C0D0FC00CA9EA4 /* Main.storyboard */; };
+		D5BED79B27C48E96007E5AD7 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = D5BED79A27C48E96007E5AD7 /* Shaders.metal */; };
 		D5D06C2527C0D0FC00CA9EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C2427C0D0FC00CA9EA4 /* AppDelegate.swift */; };
 		D5D06C2727C0D0FC00CA9EA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C2627C0D0FC00CA9EA4 /* ViewController.swift */; };
 		D5D06C2927C0D0FC00CA9EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5D06C2827C0D0FC00CA9EA4 /* Assets.xcassets */; };
@@ -39,6 +48,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D5BED77D27C477E5007E5AD7 /* DepthStencilTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DepthStencilTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5BED78327C477E6007E5AD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5BED78827C477E6007E5AD7 /* DepthStencilTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DepthStencilTest.entitlements; sourceTree = "<group>"; };
+		D5BED78C27C477F9007E5AD7 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		D5BED78E27C47F77007E5AD7 /* ShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
+		D5BED79A27C48E96007E5AD7 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		D5D06C2127C0D0FC00CA9EA4 /* MetalCN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalCN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D06C2427C0D0FC00CA9EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5D06C2627C0D0FC00CA9EA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +90,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D5BED77A27C477E5007E5AD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5D06C1E27C0D0FC00CA9EA4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,6 +128,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D5BED77E27C477E5007E5AD7 /* DepthStencilTest */ = {
+			isa = PBXGroup;
+			children = (
+				D5BED78327C477E6007E5AD7 /* Assets.xcassets */,
+				D5BED78827C477E6007E5AD7 /* DepthStencilTest.entitlements */,
+				D5BED78C27C477F9007E5AD7 /* Renderer.swift */,
+				D5BED78E27C47F77007E5AD7 /* ShapeType.swift */,
+				D5BED79A27C48E96007E5AD7 /* Shaders.metal */,
+			);
+			path = DepthStencilTest;
+			sourceTree = "<group>";
+		};
 		D5D06C1827C0D0FC00CA9EA4 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +148,7 @@
 				D5D06C5A27C1E8B100CA9EA4 /* MetalComputeAdd */,
 				D5D06C6F27C2350800CA9EA4 /* Synchronization */,
 				E9595D5B27C36E4300C1F765 /* Texture */,
+				D5BED77E27C477E5007E5AD7 /* DepthStencilTest */,
 				D5D06C2227C0D0FC00CA9EA4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +160,7 @@
 				D5D06C5927C1E8B100CA9EA4 /* MetalComputeAdd.app */,
 				D5D06C6E27C2350800CA9EA4 /* Synchronization.app */,
 				E9595D5A27C36E4300C1F765 /* Texture.app */,
+				D5BED77D27C477E5007E5AD7 /* DepthStencilTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,6 +240,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D5BED77C27C477E5007E5AD7 /* DepthStencilTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5BED78B27C477E6007E5AD7 /* Build configuration list for PBXNativeTarget "DepthStencilTest" */;
+			buildPhases = (
+				D5BED77927C477E5007E5AD7 /* Sources */,
+				D5BED77A27C477E5007E5AD7 /* Frameworks */,
+				D5BED77B27C477E5007E5AD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DepthStencilTest;
+			productName = DepthStencilTest;
+			productReference = D5BED77D27C477E5007E5AD7 /* DepthStencilTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D5D06C2027C0D0FC00CA9EA4 /* MetalCN */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5D06C3027C0D0FC00CA9EA4 /* Build configuration list for PBXNativeTarget "MetalCN" */;
@@ -282,6 +335,9 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					D5BED77C27C477E5007E5AD7 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					D5D06C2027C0D0FC00CA9EA4 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -314,11 +370,22 @@
 				D5D06C5827C1E8B100CA9EA4 /* MetalComputeAdd */,
 				D5D06C6D27C2350800CA9EA4 /* Synchronization */,
 				E9595D5927C36E4300C1F765 /* Texture */,
+				D5BED77C27C477E5007E5AD7 /* DepthStencilTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D5BED77B27C477E5007E5AD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5BED79827C48E47007E5AD7 /* Main.storyboard in Resources */,
+				D5BED79027C481E2007E5AD7 /* Image.tga in Resources */,
+				D5BED78427C477E6007E5AD7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5D06C1F27C0D0FC00CA9EA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +426,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D5BED77927C477E5007E5AD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5BED79B27C48E96007E5AD7 /* Shaders.metal in Sources */,
+				D5BED79727C48E44007E5AD7 /* ViewController.swift in Sources */,
+				D5BED79627C48E42007E5AD7 /* AppDelegate.swift in Sources */,
+				D5BED78F27C47F77007E5AD7 /* ShapeType.swift in Sources */,
+				D5BED79127C481ED007E5AD7 /* AAPLImage.m in Sources */,
+				D5BED78D27C477F9007E5AD7 /* Renderer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5D06C1D27C0D0FC00CA9EA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +501,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D5BED78927C477E6007E5AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DepthStencilTest/DepthStencilTest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U28X3G4N5K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.DepthStencilTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Texture/Texture-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D5BED78A27C477E6007E5AD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DepthStencilTest/DepthStencilTest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U28X3G4N5K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.DepthStencilTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Texture/Texture-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		D5D06C2E27C0D0FC00CA9EA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -760,6 +896,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D5BED78B27C477E6007E5AD7 /* Build configuration list for PBXNativeTarget "DepthStencilTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5BED78927C477E6007E5AD7 /* Debug */,
+				D5BED78A27C477E6007E5AD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D5D06C1C27C0D0FC00CA9EA4 /* Build configuration list for PBXProject "MetalCN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
