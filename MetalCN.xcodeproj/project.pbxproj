@@ -49,6 +49,13 @@
 		E9595DAD27C4C83E00C1F765 /* MatrixUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */; };
 		E9595DAE27C4C83E00C1F765 /* MatrixUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */; };
 		E9595DAF27C4C83E00C1F765 /* MatrixUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */; };
+		E9D752DD27C6666200509198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D752DC27C6666200509198 /* Assets.xcassets */; };
+		E9D752E627C666E800509198 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D752E527C666E800509198 /* Renderer.swift */; };
+		E9D752E927C6713700509198 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D752E827C6713700509198 /* ShapeType.swift */; };
+		E9D752EB27C672DF00509198 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = E9D752EA27C672DF00509198 /* Shaders.metal */; };
+		E9D752EC27C6740F00509198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C2427C0D0FC00CA9EA4 /* AppDelegate.swift */; };
+		E9D752ED27C6741200509198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D06C2627C0D0FC00CA9EA4 /* ViewController.swift */; };
+		E9D752EE27C6741500509198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D06C2A27C0D0FC00CA9EA4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +99,12 @@
 		E9595D7927C37F6300C1F765 /* AAPLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLImage.h; sourceTree = "<group>"; };
 		E9595D7A27C37F6300C1F765 /* AAPLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLImage.m; sourceTree = "<group>"; };
 		E9595DAB27C4C83E00C1F765 /* MatrixUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixUtil.swift; sourceTree = "<group>"; };
+		E9D752D627C6666100509198 /* RenderPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9D752DC27C6666200509198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E9D752E127C6666200509198 /* RenderPass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RenderPass.entitlements; sourceTree = "<group>"; };
+		E9D752E527C666E800509198 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		E9D752E827C6713700509198 /* ShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
+		E9D752EA27C672DF00509198 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +143,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9D752D327C6666100509198 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -154,6 +174,7 @@
 				D5D06C6F27C2350800CA9EA4 /* Synchronization */,
 				E9595D5B27C36E4300C1F765 /* Texture */,
 				D5BED77E27C477E5007E5AD7 /* DepthStencilTest */,
+				E9D752D727C6666100509198 /* RenderPass */,
 				D5D06C2227C0D0FC00CA9EA4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,6 +187,7 @@
 				D5D06C6E27C2350800CA9EA4 /* Synchronization.app */,
 				E9595D5A27C36E4300C1F765 /* Texture.app */,
 				D5BED77D27C477E5007E5AD7 /* DepthStencilTest.app */,
+				E9D752D627C6666100509198 /* RenderPass.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +263,18 @@
 				E9595D7827C37F6200C1F765 /* Texture-Bridging-Header.h */,
 			);
 			path = Texture;
+			sourceTree = "<group>";
+		};
+		E9D752D727C6666100509198 /* RenderPass */ = {
+			isa = PBXGroup;
+			children = (
+				E9D752DC27C6666200509198 /* Assets.xcassets */,
+				E9D752E127C6666200509198 /* RenderPass.entitlements */,
+				E9D752E527C666E800509198 /* Renderer.swift */,
+				E9D752E827C6713700509198 /* ShapeType.swift */,
+				E9D752EA27C672DF00509198 /* Shaders.metal */,
+			);
+			path = RenderPass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +365,23 @@
 			productReference = E9595D5A27C36E4300C1F765 /* Texture.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E9D752D527C6666100509198 /* RenderPass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9D752E427C6666200509198 /* Build configuration list for PBXNativeTarget "RenderPass" */;
+			buildPhases = (
+				E9D752D227C6666100509198 /* Sources */,
+				E9D752D327C6666100509198 /* Frameworks */,
+				E9D752D427C6666100509198 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RenderPass;
+			productName = RenderPass;
+			productReference = E9D752D627C6666100509198 /* RenderPass.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -357,6 +408,10 @@
 						CreatedOnToolsVersion = 13.2.1;
 						LastSwiftMigration = 1320;
 					};
+					E9D752D527C6666100509198 = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
+					};
 				};
 			};
 			buildConfigurationList = D5D06C1C27C0D0FC00CA9EA4 /* Build configuration list for PBXProject "MetalCN" */;
@@ -377,6 +432,7 @@
 				D5D06C6D27C2350800CA9EA4 /* Synchronization */,
 				E9595D5927C36E4300C1F765 /* Texture */,
 				D5BED77C27C477E5007E5AD7 /* DepthStencilTest */,
+				E9D752D527C6666100509198 /* RenderPass */,
 			);
 		};
 /* End PBXProject section */
@@ -426,6 +482,15 @@
 				E9595D6E27C36F0E00C1F765 /* Image.tga in Resources */,
 				E9595D6B27C36EE600C1F765 /* Main.storyboard in Resources */,
 				E9595D6127C36E4400C1F765 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D752D427C6666100509198 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D752DD27C6666200509198 /* Assets.xcassets in Resources */,
+				E9D752EE27C6741500509198 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +559,18 @@
 				E9595D6927C36EDC00C1F765 /* AppDelegate.swift in Sources */,
 				E9595DAE27C4C83E00C1F765 /* MatrixUtil.swift in Sources */,
 				E9595D7327C3712800C1F765 /* Renderer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D752D227C6666100509198 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D752ED27C6741200509198 /* ViewController.swift in Sources */,
+				E9D752EC27C6740F00509198 /* AppDelegate.swift in Sources */,
+				E9D752EB27C672DF00509198 /* Shaders.metal in Sources */,
+				E9D752E627C666E800509198 /* Renderer.swift in Sources */,
+				E9D752E927C6713700509198 /* ShapeType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +980,63 @@
 			};
 			name = Release;
 		};
+		E9D752E227C6666200509198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RenderPass/RenderPass.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U28X3G4N5K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.RenderPass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E9D752E327C6666200509198 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RenderPass/RenderPass.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U28X3G4N5K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.RenderPass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -956,6 +1090,15 @@
 			buildConfigurations = (
 				E9595D6627C36E4400C1F765 /* Debug */,
 				E9595D6727C36E4400C1F765 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9D752E427C6666200509198 /* Build configuration list for PBXNativeTarget "RenderPass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D752E227C6666200509198 /* Debug */,
+				E9D752E327C6666200509198 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
