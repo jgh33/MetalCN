@@ -150,11 +150,6 @@ extension Renderer: MTKViewDelegate {
         guard let commandBuffer = commandQueue.makeCommandBuffer() else{ return }
         guard let rpd = view.currentRenderPassDescriptor else {return}
         
-        let textureD = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .depth32Float, width: Int(view.frame.width), height: Int(view.frame.height), mipmapped: false)
-        textureD.storageMode = .private
-        textureD.usage = .renderTarget
-        let depthTexture = device.makeTexture(descriptor: textureD)
-        rpd.depthAttachment.texture = depthTexture
         guard let encoder = commandBuffer.makeRenderCommandEncoder(descriptor: rpd) else {return}
         encoder.setRenderPipelineState(pipelineState)
         encoder.setDepthStencilState(depthState)
