@@ -130,7 +130,7 @@ extension Renderer: MTKViewDelegate {
     
     func draw(in view: MTKView) {
         
-        let vertices = device.makeBuffer(bytes: cubeVertices, length: MemoryLayout<Vertex>.size * 36, options: .storageModeShared)!
+        let vertices = device.makeBuffer(bytes: cubeVertices, length: MemoryLayout<Vertex>.stride * 36, options: .storageModeShared)!
         let numVertices = cubeVertices.count
         let mvpMatrixBuffer = device.makeBuffer(length: MemoryLayout<matrix_float4x4>.size, options: .storageModeShared)!
         
@@ -138,7 +138,7 @@ extension Renderer: MTKViewDelegate {
         let cameraPosition = vector_float3(0, 0, -3)
         rotation += 0.01
         let rotatedx = matrix_float4x4(rotationMatrix: rotation, axis: vector_float3(1, 0, 0))
-        let rotatedy = matrix_float4x4(rotationMatrix: rotation, axis: vector_float3(0, 1, 0))
+        let rotatedy = matrix_float4x4(rotationMatrix: 0, axis: vector_float3(0, 1, 0))
         let modelMatrix = matrix_multiply(rotatedx, rotatedy)
         let viewMatrix = matrix_float4x4(translationMatrix: cameraPosition)
         let projMatrix = matrix_float4x4(projectionMatrix: 0.1, far: 100, aspect: 1, fovy: 1)
