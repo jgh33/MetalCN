@@ -24,13 +24,13 @@ class Renderer: NSObject {
     let triVertices = [
         Vertex(vector_float2(0.5, -0.5), vector_float4(1, 0, 0, 1)),
         Vertex(vector_float2(-0.5, -0.5), vector_float4(0, 1, 0, 1)),
-        Vertex(vector_float2(0, -0.5), vector_float4(0, 0, 1, 1)),
+        Vertex(vector_float2(0, 0.5), vector_float4(0, 0, 1, 1)),
     ]
     
     let quadVertices = [
         VertexT(vector_float2(0.5, -0.5), vector_float2(1, 1)),
         VertexT(vector_float2(-0.5, -0.5), vector_float2(0, 1)),
-        VertexT(vector_float2(-0.5, -0.5), vector_float2(0, 0)),
+        VertexT(vector_float2(-0.5, 0.5), vector_float2(0, 0)),
         VertexT(vector_float2(0.5, -0.5), vector_float2(1, 1)),
         VertexT(vector_float2(-0.5, 0.5), vector_float2(0, 0)),
         VertexT(vector_float2(0.5, 0.5), vector_float2(1, 0)),
@@ -78,8 +78,8 @@ class Renderer: NSObject {
         
         super.init()
         
-        print(MemoryLayout<Vertex>.size)
-        print(MemoryLayout<VertexT>.size)
+        print(MemoryLayout<Vertex>.stride)
+        print(MemoryLayout<VertexT>.stride)
     }
 }
 
@@ -93,21 +93,21 @@ extension Renderer: MTKViewDelegate {
         
         let encoder = cb.makeRenderCommandEncoder(descriptor: textureRenderPassDescriotor)!
         encoder.setRenderPipelineState(textureRenderPipeline)
-        encoder.setVertexBytes(triVertices, length: MemoryLayout<Vertex>.size * 3, index: 0)
+        encoder.setVertexBytes(triVertices, length: MemoryLayout<Vertex>.stride * 3, index: 0)
         encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3)
         encoder.endEncoding()
         
         
-//        let drawpd = view.currentRenderPassDescriptor!
-//
-//        let encoderT = cb.makeRenderCommandEncoder(descriptor: drawpd)!
-//        encoderT.setRenderPipelineState(drawableRenderPipeline)
-//        encoderT.setVertexBytes(quadVertices, length: MemoryLayout<VertexT>.size * 6, index: 0)
-//        encoderT.setVertexBytes(&aspectRatio, length: MemoryLayout<Float>.size, index: 1)
-//        encoderT.setFragmentTexture(renderTargetTexture, index: 0)
-//        encoderT.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6)
-//
-//        encoderT.endEncoding()
+        let drawpd = view.currentRenderPassDescriptor!
+
+        let encoderT = cb.makeRenderCommandEncoder(descriptor: drawpd)!
+        encoderT.setRenderPipelineState(drawableRenderPipeline)
+        encoderT.setVertexBytes(quadVertices, length: MemoryLayout<VertexT>.size * 6, index: 0)
+        encoderT.setVertexBytes(&aspectRatio, length: MemoryLayout<Float>.size, index: 1)
+        encoderT.setFragmentTexture(renderTargetTexture, index: 0)
+        encoderT.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6)
+
+        encoderT.endEncoding()
         
         cb.present(view.currentDrawable!)
         
